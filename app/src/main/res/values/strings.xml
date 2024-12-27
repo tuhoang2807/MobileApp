@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">moblie-app</string>
+    <string name="intro_title">
+    Cooking Pan\n
+    <font color="#FFA500"><b>Đồ gia dụng hiện đại &amp; Phụ kiện nhà bếp</b></font>
+</string>
+    <string name="intro_text">Giá cả hợp lý\nBảo hành lên đến 3 năm\nChất lượng hàng đầu</string>
+    <string name="intro_login">Bạn đã có tài khoản? <font color="#FFA500">Đăng nhập ngay</font></string>
+</resources>

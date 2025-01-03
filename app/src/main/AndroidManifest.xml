@@ -28,7 +28,15 @@
             android:exported="false" />
         <activity
             android:name=".Activity.OrderActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="mobile-app" android:host="order" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Activity.InforMenuActivity"
             android:exported="false" />

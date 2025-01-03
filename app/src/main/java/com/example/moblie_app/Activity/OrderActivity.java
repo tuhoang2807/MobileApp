@@ -125,6 +125,7 @@ public class OrderActivity extends AppCompatActivity {
     private void processOnlinePayment(int orderId) {
         HashMap<String, Object> paymentParams = new HashMap<>();
         paymentParams.put("order_id", orderId);
+        paymentParams.put("platform", "android"); // Thêm platform
         Gson gson = new Gson();
         String paymentJson = gson.toJson(paymentParams);
         sharedPreferences = getSharedPreferences("user_session", MODE_PRIVATE);

@@ -6,4 +6,19 @@
 </string>
     <string name="intro_text">Giá cả hợp lý\nBảo hành lên đến 3 năm\nChất lượng hàng đầu</string>
     <string name="intro_login">Bạn đã có tài khoản? <font color="#FFA500">Đăng nhập ngay</font></string>
+
+    <string-array name="sort_options">
+        <item>Sắp xếp theo giá</item>
+        <item>Tăng dần</item>
+        <item>Giảm dần</item>
+    </string-array>
+
+    <string-array name="price_options">
+        <item>Chọn khoảng giá</item>
+        <item>0 - 1 Triệu</item>
+        <item>1 - 10 Triệu</item>
+        <item>Trên 10 Triệu</item>
+    </string-array>
+
+
 </resources>

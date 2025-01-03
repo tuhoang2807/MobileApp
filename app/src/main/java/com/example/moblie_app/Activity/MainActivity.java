@@ -372,9 +372,13 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CartActivity.class);
         startActivity(intent);
     }
-
     public void goToNofication(View view){
         Intent intent = new Intent(this, NoficationActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToAllProduct(View view){
+        Intent intent = new Intent(this, ProductActivity.class);
         startActivity(intent);
     }
 }

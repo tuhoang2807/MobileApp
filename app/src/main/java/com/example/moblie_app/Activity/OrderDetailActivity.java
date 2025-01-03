@@ -86,10 +86,14 @@ public class OrderDetailActivity extends AppCompatActivity {
         } else if ("completed".equals(orderStatus)) {
             tvStatus.setText("Trạng thái: Đã giao");
             tvStatus.setTextColor(ContextCompat.getColor(this, R.color.green));
+        } else if ("paid".equals(orderStatus)) {
+            tvStatus.setText("Trạng thái: Đã thanh toán");
+            tvStatus.setTextColor(ContextCompat.getColor(this, R.color.purple));
         } else {
             tvStatus.setText("Trạng thái: " + orderStatus);
             tvStatus.setTextColor(ContextCompat.getColor(this, R.color.black));
         }
+
 
     }
     public void loadInformationDetail() {

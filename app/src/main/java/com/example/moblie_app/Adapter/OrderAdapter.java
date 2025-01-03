@@ -30,6 +30,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         this.orderList = orderList;
         this.onCancelOrderListener = onCancelOrderListener;
     }
+
     public void setOnOrderClickListener(OnOrderClickListener onOrderClickListener) {
         this.onOrderClickListener = onOrderClickListener;
     }
@@ -58,6 +59,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
             holder.orderStatus.setText("Đã hủy");
         } else if ("shipping".equals(orderStatus)) {
             holder.orderStatus.setText("Đang giao");
+        } else if ("paid".equals(orderStatus)) {
+            holder.orderStatus.setText("Đã thanh toán");
         } else if ("completed".equals(orderStatus)) {
             holder.orderStatus.setText("Đã giao");
         } else {

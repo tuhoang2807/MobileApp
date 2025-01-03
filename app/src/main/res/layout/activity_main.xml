@@ -201,6 +201,16 @@
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Xem tất cả"
+                    android:textColor="@color/orange"
+                    android:textStyle="bold"
+                    android:onClick="goToAllProduct"/>
+
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout

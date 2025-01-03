@@ -6,4 +6,7 @@
     <color name="lightGray">#efefef</color>
     <color name="gray">#919191</color>
     <color name="main">#1A1A1A</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#008000</color>
+    <color name="blue">#1E90FF</color>
 </resources>

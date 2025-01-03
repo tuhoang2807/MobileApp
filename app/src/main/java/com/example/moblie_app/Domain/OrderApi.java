@@ -1,5 +1,6 @@
 package com.example.moblie_app.Domain;
 import com.example.moblie_app.ViewModel.OrderItem;
+import com.example.moblie_app.ViewModel.Product;
 
 import java.util.List;
 
@@ -19,4 +20,17 @@ public interface OrderApi {
     Call<List<OrderItem>> getUserOrder();
     @PUT("api/order/cancel/{orderId}")
     Call<Void> cancelOrder(@Path("orderId") int orderId);
+
+    @GET("api/order/items/{orderId}")
+    Call<OrderItem> getDetailOrder(@Path("orderId") int orderId);
+
+    @GET("api/order/{orderId}")
+    Call<OrderItem> getInformationOrder(@Path("orderId") int orderId);
+
+    @GET("/api/order/items/{orderId}")
+    Call<List<Product>> getProductItem(@Path("orderId")int orderId);
+
+    @POST("/api/order/payment")
+    Call<OrderItem>paymentOnline(@Body RequestBody requestBody);
+
 }

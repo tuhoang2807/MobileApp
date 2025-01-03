@@ -22,7 +22,7 @@ public class NoficationActivity extends AppCompatActivity {
         Intent intent = new Intent(this, OrderNoficationActivity.class);
         startActivity(intent);
     }
-     public void onBack(){
+     public void onBack(View view){
         finish();
      }
 }

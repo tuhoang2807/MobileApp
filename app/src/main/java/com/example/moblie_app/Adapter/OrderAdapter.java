@@ -1,5 +1,6 @@
 package com.example.moblie_app.Adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.moblie_app.Activity.OrderDetailActivity;
 import com.example.moblie_app.R;
 import com.example.moblie_app.ViewModel.OrderItem;
 
@@ -22,10 +24,14 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
 
     private List<OrderItem> orderList;
     private OnCancelOrderListener onCancelOrderListener;
+    private OnOrderClickListener onOrderClickListener;
 
     public OrderAdapter(List<OrderItem> orderList, OnCancelOrderListener onCancelOrderListener) {
         this.orderList = orderList;
         this.onCancelOrderListener = onCancelOrderListener;
+    }
+    public void setOnOrderClickListener(OnOrderClickListener onOrderClickListener) {
+        this.onOrderClickListener = onOrderClickListener;
     }
 
     @NonNull
@@ -45,12 +51,31 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         holder.orderDate.setText(formattedDate);
         String formattedAmount = formatCurrency(order.gettotal_amount());
         holder.totalAmount.setText(formattedAmount);
-        holder.orderStatus.setText(order.getStatus());
-
+        String orderStatus = order.getStatus();
+        if ("pending".equals(orderStatus)) {
+            holder.orderStatus.setText("Chờ xử lý");
+        } else if ("canceled".equals(orderStatus)) {
+            holder.orderStatus.setText("Đã hủy");
+        } else if ("shipping".equals(orderStatus)) {
+            holder.orderStatus.setText("Đang giao");
+        } else if ("completed".equals(orderStatus)) {
+            holder.orderStatus.setText("Đã giao");
+        } else {
+            holder.orderStatus.setText(orderStatus);
+        }
         holder.cancelOrderButton.setOnClickListener(v -> {
             if (onCancelOrderListener != null) {
                 onCancelOrderListener.onCancelOrder(order.getId());
             }
+        });
+
+        holder.itemView.setOnClickListener(v -> {
+            if (onOrderClickListener != null) {
+                onOrderClickListener.onOrderClick(order.getId());
+            }
+            Intent intent = new Intent(v.getContext(), OrderDetailActivity.class);
+            intent.putExtra("order_id", order.getId());
+            v.getContext().startActivity(intent);
         });
     }
 
@@ -106,4 +131,9 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     public interface OnCancelOrderListener {
         void onCancelOrder(int orderId);
     }
+
+    public interface OnOrderClickListener {
+        void onOrderClick(int orderId);
+    }
+
 }

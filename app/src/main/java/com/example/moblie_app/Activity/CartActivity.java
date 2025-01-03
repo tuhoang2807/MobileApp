@@ -92,13 +92,10 @@ public class CartActivity extends AppCompatActivity {
         checkOutBtn.setOnClickListener(v -> {
             String totalAmountStr = totalAll.getText().toString().replace("đ", "").replace(".", "").trim();
             int totalAmount = totalAmountStr.isEmpty() ? 0 : Integer.parseInt(totalAmountStr);
-
             Intent intent = new Intent(CartActivity.this, OrderActivity.class);
             intent.putExtra("totalAmount", totalAmount);
             startActivity(intent);
         });
-
-
         calculateTotal();
         getCartItems();
     }

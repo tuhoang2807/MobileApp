@@ -7,9 +7,10 @@ public class Product {
     private String description;
     private int category_id;
     private int quantity;
+    private String product_name;
     private String image;
 
-    public Product(String name, String price, String description, int category_id, int quantity, String image, int id) {
+    public Product(String name, String price, String description, int category_id, int quantity, String image, int id,String product_name) {
         this.name = name;
         this.price = price;
         this.description = description;
@@ -17,6 +18,12 @@ public class Product {
         this.quantity = quantity;
         this.image = image;
         this.id = id;
+        this.product_name = product_name;
+    }
+
+    public String getProductName()
+    {
+        return product_name;
     }
 
     public String getName() {

@@ -2,6 +2,7 @@ package com.example.moblie_app.Activity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -91,5 +92,9 @@ public class OrderNoficationActivity extends AppCompatActivity {
                 Toast.makeText(OrderNoficationActivity.this, "Lỗi khi hủy đơn hàng", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public void onBack(View view){
+        finish();
     }
 }

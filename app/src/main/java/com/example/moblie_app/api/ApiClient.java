@@ -2,7 +2,6 @@ package com.example.moblie_app.api;
 
 import android.util.Log;
 
-import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

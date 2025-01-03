@@ -18,7 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/back"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            android:onClick="onBack"/>
 
         <TextView
             android:id="@+id/headerTitle"
@@ -112,7 +113,7 @@
                 android:id="@+id/paymentOnline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Thanh toán Online"
+                android:text="Thanh toán Online: ZaloPay"
                 android:textSize="16sp"
                 android:padding="8dp" />
 

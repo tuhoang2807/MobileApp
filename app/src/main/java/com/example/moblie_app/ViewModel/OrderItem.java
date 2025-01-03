@@ -3,6 +3,8 @@ package com.example.moblie_app.ViewModel;
 public class OrderItem {
 
     private String address;
+
+    private String payment_link;
     private String created_at;
     private int id;
     private String phone_number;
@@ -11,8 +13,10 @@ public class OrderItem {
     private int userId;
     private String username;
 
+    private int order_id;
 
-    public OrderItem(String address, String created_at, int id, String phone_number, String status, String total_amount, int userId, String username) {
+
+    public OrderItem(String address, String created_at, int id, String phone_number, String status, String total_amount, int userId, String username, int order_id, String payment_link) {
         this.address = address;
         this.created_at = created_at;
         this.id = id;
@@ -21,9 +25,20 @@ public class OrderItem {
         this.total_amount = total_amount;
         this.userId = userId;
         this.username = username;
+        this.order_id = order_id;
+        this.payment_link = payment_link;
     }
+
     public String getAddress() {
         return address;
+    }
+
+    public String getPaymentLink() {
+        return payment_link;
+    }
+
+    public int getOrderId() {
+        return order_id;
     }
 
     public void setAddress(String address) {

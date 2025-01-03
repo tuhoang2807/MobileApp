@@ -18,6 +18,9 @@
         android:theme="@style/Theme.Moblieapp"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.OrderDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.OrderNoficationActivity"
             android:exported="false" />
         <activity
